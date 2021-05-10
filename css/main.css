@@ -41,7 +41,7 @@
 html {
   overflow-x: hidden;
   max-width: 100%;
-  --lightIcon: url("/svg/sun.svg");
+  --lightIcon: url("./svg/sun.svg");
   --lightBtn: #FF7F00;
   --basecolor: #EEEEEE;
   --basecolorlight: #FFFFFF;
@@ -53,7 +53,7 @@ html {
 
 html[data-theme='dark'] {
   background: var(--lightBg);
-  --lightIcon: url("svg/moon.svg");
+  --lightIcon: url("./svg/moon.svg");
   --lightBtn: #5f3fb8;
   --basecolor: #333344;
   --basecolorlight: #444455;
