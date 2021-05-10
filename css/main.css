@@ -53,7 +53,7 @@ html {
 
 html[data-theme='dark'] {
   background: var(--lightBg);
-  --lightIcon: url("/svg/moon.svg");
+  --lightIcon: url("svg/moon.svg");
   --lightBtn: #5f3fb8;
   --basecolor: #333344;
   --basecolorlight: #444455;
