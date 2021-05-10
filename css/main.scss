@@ -48,6 +48,7 @@ html{
     --lightIcon: url("/svg/sun.svg");
     --lightBtn: #FF7F00;
     --basecolor: #EEEEEE;
+    --basecolorlight: #FFFFFF;
     --basecolordark: #DDDDDD;
     --basetext: #333344;
     --orange: #FF7F00;
@@ -57,12 +58,31 @@ html{
 html[data-theme='dark'] {
     background: var(--lightBg);
     --lightIcon: url("/svg/moon.svg");
-    --lightBtn: #007FFF;
+    --lightBtn: #5f3fb8;
     --basecolor: #333344;
+    --basecolorlight: #444455;
     --basecolordark: #111122;
     --basetext: #DDDDDD;
-    --orange: #e95d00;
+    --orange: #cf5300;
     --orangedark: #aa4400;
+}
+
+svg * {
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
+    transition: fill 0.25s ease;
+}
+* {
+    transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+
+.hidden-h2{
+    visibility: hidden;
+}
+
+.no-href{
+    cursor:not-allowed !important;
 }
 
 body{
@@ -75,10 +95,6 @@ body{
     font-family: 'Poppins', arial;
 }
 
-div{
-    transition: background-color 0.5s linear;
-    transition: color 0.5s linear;
-}
 
 .bodycontainer{
     overflow-x: hidden;
@@ -375,7 +391,7 @@ a {
 
 .about-us{
     background-color: var(--orange);
-    color: #333333;
+    color: var(--basetext);
     display: inline-block;
     padding: 0;
     margin: 0;
@@ -458,7 +474,7 @@ a {
 
             input[type=text], select, textarea {
                 width: 100%; /* Full width */
-                background-color: var(--basecolordark);
+                background-color: var(--basecolorlight);
                 padding: 0.75em; /* Some padding */ 
                 border: none; /* Gray border */
                 font-family: 'Poppins', arial;
@@ -474,9 +490,9 @@ a {
             }
             input[type=text]:focus, textarea:focus{
                 outline: none;
-                box-shadow: 0 0 0 4px $orangechickentransparent;
-                background-color: #FFFFFF;
-                border-color: $orangechickentransparent;
+                box-shadow: 0 0 0 4px var(--orange);
+                background-color: var(--basecolorlight);
+                border-color: var(--orange);
             }
 
             button{
