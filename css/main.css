@@ -46,16 +46,16 @@ html {
   --basecolor: #EEEEEE;
   --basecolorlight: #FFFFFF;
   --basecolordark: #DDDDDD;
-  --basetext: #333344;
+  --basetext: #141133;
   --orange: #FF7F00;
-  --orangedark: #BF6000;
+  --orangedark: #aa4d00;
 }
 
 html[data-theme='dark'] {
   background: var(--lightBg);
   --lightIcon: url("../svg/moon.svg");
   --lightBtn: #5f3fb8;
-  --basecolor: #333344;
+  --basecolor: #353344;
   --basecolorlight: #444455;
   --basecolordark: #111122;
   --basetext: #DDDDDD;
@@ -70,6 +70,7 @@ svg * {
   transition: background-color 0.25s ease;
   -webkit-transition: fill 0.25s ease;
   transition: fill 0.25s ease;
+  display: block;
 }
 
 * {
@@ -123,6 +124,10 @@ a {
   padding: 0;
 }
 
+u {
+  text-decoration: none;
+}
+
 .wavy {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
@@ -134,6 +139,45 @@ a {
   text-decoration: none;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+span {
+  display: inline-block;
+}
+
+span.bounce {
+  -webkit-animation: bounce 0.5s ease;
+          animation: bounce 0.5s ease;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 .inset-shadow-filter {
@@ -573,7 +617,7 @@ a {
 .about-us .aboutus-content {
   height: auto;
   padding: 0;
-  margin: 2em 1em;
+  margin: 3em 1em;
   text-align: center;
 }
 
@@ -586,7 +630,8 @@ a {
 .about-us .aboutus-content p {
   font-size: 1em;
   padding: 0;
-  margin: 1em 2em 0.5em;
+  margin: 1em 2em;
+  max-width: 50ch;
 }
 
 .about-us .aboutus-content img {
@@ -610,7 +655,7 @@ a {
 .contact-us .contactus-content {
   height: auto;
   padding: 0;
-  margin: 2em 1em;
+  margin: 3em 1em;
   text-align: center;
 }
 
@@ -633,6 +678,7 @@ a {
   font-size: 1em;
   margin-bottom: 0;
   text-align: right;
+  color: var(--basetext);
 }
 
 .contact-us .contactus-content .contact-form p {
@@ -667,6 +713,7 @@ a {
   /* Bottom margin */
   resize: none;
   float: bottom;
+  color: var(--basetext);
 }
 
 .contact-us .contactus-content .contact-form input[type=text]:focus, .contact-us .contactus-content .contact-form textarea:focus {
@@ -708,7 +755,7 @@ a {
   fill: var(--orangedark);
   position: relative;
   width: 200%;
-  bottom: -3vw;
+  bottom: -2.5vw;
   -webkit-transform: translateX(-45%);
           transform: translateX(-45%);
 }
@@ -727,7 +774,6 @@ footer .bottom {
   height: auto;
   background-color: var(--orangedark);
   margin: 0;
-  margin-top: -10px;
   padding: 0;
   overflow: hidden;
 }
@@ -783,21 +829,31 @@ footer .bottom .looping-text h1 {
   }
 }
 
-footer .botlinks {
-  -webkit-columns: 2;
-          columns: 2;
-  width: 25ch;
+footer .botlists .botlinks {
+  display: inline-block;
+  width: 40ch;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 auto 2em;
-  text-align: center;
+  text-align: left;
+  padding-top: 1em;
+  overflow: visible;
+  font-size: 1.25em;
 }
 
-footer .botlinks li a {
+footer .botlists .botlinks li {
+  margin: 1em;
+  margin-top: 0;
+  overflow: visible;
+}
+
+footer .botlists .botlinks li a {
   font-weight: 600;
-  color: var(--basetext);
+  height: 4em;
+  color: #DDDDDD;
   text-decoration: none;
+  overflow: visible;
 }
 
 footer p {
@@ -808,6 +864,10 @@ footer p {
   text-align: center;
   line-height: 80%;
   width: 25ch;
+}
+
+footer p u {
+  color: #DDDDDD;
 }
 
 .toggle {
@@ -883,6 +943,65 @@ footer p {
           transition-delay: 0 !important;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal svg {
+  margin-top: -1px;
+  margin-left: 14vw;
+  width: 100px;
+  fill: var(--basecolor);
+}
+
+/* Modal Content */
+.modal-content {
+  color: var(--basetext);
+  display: block;
+  background-color: var(--basecolor);
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  height: 10vh;
+  width: 80vw;
+}
+
+/* The Close Button */
+.close {
+  color: var(--basetext);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--orange);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 640px) {
   .nav-container svg {
     width: 100%;
@@ -902,7 +1021,7 @@ footer p {
     width: 50%;
   }
   .contact-us .contactus-content {
-    margin: 2em 2em;
+    margin: 3em 2em;
   }
   .contact-us .contactus-content h1 {
     text-align: left;
@@ -915,7 +1034,7 @@ footer p {
     width: 50%;
   }
   .about-us .aboutus-content {
-    margin: 2em 2em;
+    margin: 3em 2em;
   }
   .about-us .aboutus-content h1 {
     text-align: left;

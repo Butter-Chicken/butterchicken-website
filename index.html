@@ -9,7 +9,8 @@
       type="/image/png" 
       href="images/logo.png">
     <link rel="stylesheet" href="css/main.css">
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 </head>
 <body>
     <div class="nav-container">
@@ -50,7 +51,7 @@
                     <div class="info">
                         <h1>CHUNKY CHOMPERS</h1>
                         <p>Android</p>
-                        <h2><u class="wavy">Learn more</u> <u class="rotated">&#10140;</u></h2>
+                        <h2><u class="wavy">Learn&nbsp;more</u> <u class="rotated">&#10140;</u></h2>
                     </div>
                 </div>
             </a>
@@ -63,7 +64,7 @@
                     <div class="info">
                         <h1>ON-LINE</h1>
                         <p>coming soon</p>
-                        <h2 class="hidden-h2"><u class="wavy">Learn more</u> <u class="rotated">&#10140;</u></h2>
+                        <h2 class="hidden-h2"><u class="wavy">Learn&nbsp;more</u> <u class="rotated">&#10140;</u></h2>
                     </div>
                 </div>
             </a>
@@ -76,7 +77,7 @@
                     <div class="info">
                         <h1>?????????</h1>
                         <p>planned</p>
-                        <h2 class="hidden-h2"><u class="wavy">Learn more</u> <u class="rotated">&#10140;</u></h2>
+                        <h2 class="hidden-h2"><u class="wavy">Learn&nbsp;more</u> <u class="rotated">&#10140;</u></h2>
                     </div>
                 </div>
             </a>
@@ -92,8 +93,8 @@
                 </h1>
                 <p class="about-us-p1">
                     We are a team of 2 people currently living in Austria. Butter Chicken is a passion project we tend to in our free time and it has brought us a lot of joy so far!
-                    <br><br>
-                    We hope you enjoy our games and join us on our journey through the world of game development and beyond!
+                    <br><!--br>&#127775;&#128068;&#127775;<br--><br>
+                    We hope you enjoy our games and join us on our journey through the world of game development and beyond! &#128150;
                 </p>
                 <img src="images/logo.png" alt="">
             </div>
@@ -105,31 +106,51 @@
                     Contact us!
                 </h1>
                 <p class="contact-us-p1">
-                    If you have any issues, questions or other inquiries, don't hesitate to contact us through our socials, or right here &#8681;
+                    If you have any issues, questions or other inquiries, don't hesitate to contact us through our socials, or right here &#128140; &#8681;
                 </p>
-        
-                <form class="contact-form" method="post" name="contactform" action="contact-form-handler.php">
+                <form class="contact-form" id="gform" name="gform" target="hidden_iframe" onsubmit="validateForn();" action="https://docs.google.com/forms/d/e/1FAIpQLSfRxWVnBrdlh_mmFBpC2VK21H7xybX5tTOkNwafFLU01SAfVw/formResponse?">
                     <p>Name</p>
-                    <input class="input-name" type="text" name="name">
+                    <label for="entry.603406145"></label>
+                    <input class="input-name" type="text" name="entry.603406145" id="entry.603406145" required>
                     <p>Email</p>
-                    <input class="input-email" type="text" name="email">
+                    <input class="input-email" type="text" name="entry.1228915139" id="entry.1228915139" required>
                     <p>Message</p>
-                    <textarea class="input-message" name="message" oninput="auto_grow(this)"></textarea>
-                    <button class="input-button" type="submit" name="submit">SEND  &#10148;</button>
+                    <textarea class="input-message" name="entry.837735562" id="entry.837735562" oninput="auto_grow(this)" required></textarea>
+                    <button class="input-button" id="myModalButton">SEND  &#10148;</button>
                 </form>	
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){}"></iframe>
                 <script>
                     function auto_grow(element) {
                         element.style.height = "1em";
                         element.style.height = (Math.max(element.scrollHeight, 67))+"px";
                     }
                 </script>
-                <script language="JavaScript">
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                <script type="text/javascript">
+                    var submitted = false;
+                </script>
+                <script>
+                    function resetForm(){
+                        document.getElementById("gform").reset();
+                    }
+
+                    function validateForn(){
+                        var x = document.forms["myForm"]["fname"].value;
+                        if (x == "") {
+                            alert("Name must be filled out");
+                            return false;
+                        }else{
+                            submitted=true;
+                        }
+                    }
+                </script>
+                <!--script language="JavaScript">
                     var frmvalidator  = new Validator("contactform");
                     frmvalidator.addValidation("name","req","Please provide your name");
                     frmvalidator.addValidation("email","req","Please provide your email");
                     frmvalidator.addValidation("email","email",
                       "Please enter a valid email address");
-                </script>
+                </script-->
             </div>
         </div>
     </div>
@@ -146,21 +167,61 @@
                 <h1>BUTTR CHONCC. BUMTRE CHIMKEN. BOOTREE CHEEKEN. BUTTR CHICK. BTTR CHCKN. BUDDER CHIGGEN. BUTTR CHONCC. BUMTRE CHIMKEN. BOOTREE CHEEKEN. BUTTR CHICK. BTTR CHCKN. BUDDER CHIGGEN. BUTTR CHONCC. BUMTRE CHIMKEN. BOOTREE CHEEKEN. BUTTR CHICK. BTTR CHCKN. BUDDER CHIGGEN. BUTTR CHONCC. BUMTRE CHIMKEN. BOOTREE CHEEKEN. BUTTR CHICK. BTTR CHCKN. BUDDER CHIGGEN.&nbsp;</h1>
             </div>
         </div>
-        <ul class="botlinks">
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-            <li><a href="#"><u class="wavy">Our Games</u> <u class="rotated">&#10140;</u></a></li>
-        </ul>
-        <p>Copyright 2021<br><br><span style="font-size: 0.5em; ">Google Play and the Google Play logo are trademarks of Google LLC.</span></p>
+        <div class="botlists">
+            <ul class="botlinks">
+                <li><a href="#"><u class="rotated">&#10140;</u> <u class="wavy">Chunky&nbsp;Chompers</u></a></li>
+                <li class="no-href"><a><u>&#128274;</u> <u class="wavy">ON-LINE</u></a></li>
+                <li class="no-href"><a><u>&#128274;</u> <u class="wavy">?????????</u></a></li>
+            </ul>
+        </div>
+        <p><u>Made with &#128150;<br><br>Copyright 2021</u><br><br><span style="font-size: 0.5em; ">Google Play and the Google Play logo are trademarks of Google LLC.</span></p>
     </footer>
     
     <div class="toggle">
         <input class="container_toggle" type="checkbox" id="switch" name="mode">
         <label for="switch">Toggle</label>
     </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Thank you!!! <br> We'll get back to you asap!</p>
+        </div>
+        <svg version="1.1" viewBox="0 0 12.605 9.4866" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <g transform="translate(-58.247 -20.883)">
+                <a>
+                    <path d="m70.852 20.883-12.605 0.03341s3.1181-0.10023 3.1181 3.5038c0 2.7018-0.2558 5.9493 1.0537 5.9493 2.0911 0-0.06829-7.4986 2.1146-7.4986 2.5504 0 0.4775 4.107 2.3045 4.107 1.2875 0 1.0241-1.422 1.0241-2.9807 0-2.8502 1.4651-3.1142 2.9904-3.1142z"/>
+                </a>
+            </g>
+        </svg>
+      
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myModalButton");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+            resetForm();
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                resetForm();
+            }
+        }
+    </script>
 
     <script src="./text.js"></script>
     <script src="./mode.js"></script>

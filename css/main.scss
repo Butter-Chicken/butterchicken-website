@@ -50,16 +50,16 @@ html{
     --basecolor: #EEEEEE;
     --basecolorlight: #FFFFFF;
     --basecolordark: #DDDDDD;
-    --basetext: #333344;
+    --basetext: #141133;
     --orange: #FF7F00;
-    --orangedark: #BF6000;
+    --orangedark: #aa4d00;
 }
 
 html[data-theme='dark'] {
     background: var(--lightBg);
     --lightIcon: url("../svg/moon.svg");
     --lightBtn: #5f3fb8;
-    --basecolor: #333344;
+    --basecolor: #353344;
     --basecolorlight: #444455;
     --basecolordark: #111122;
     --basetext: #DDDDDD;
@@ -71,6 +71,7 @@ svg * {
     transition: color 0.25s ease;
     transition: background-color 0.25s ease;
     transition: fill 0.25s ease;
+    display: block;
 }
 * {
     transition: color 0.25s ease;
@@ -120,6 +121,10 @@ a {
     padding: 0;
 }
 
+u{
+    text-decoration: none;
+}
+
 .wavy{
     text-decoration: underline;
     text-decoration-style: wavy;
@@ -128,6 +133,26 @@ a {
     display: inline-block;
     text-decoration: none;
     transform: rotate(-45deg);
+}
+
+span{
+    display: inline-block;
+}
+
+span.bounce{
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 .inset-shadow-filter{
@@ -401,7 +426,7 @@ a {
     .aboutus-content{
         height: auto;
         padding: 0;
-        margin: 2em 1em;
+        margin: 3em 1em;
         text-align: center;
 
         h1{
@@ -414,7 +439,8 @@ a {
         p{
             font-size: 1em;
             padding: 0;
-            margin: 1em 2em 0.5em;
+            margin: 1em 2em;
+            max-width: 50ch;
         }
 
         img{
@@ -439,7 +465,7 @@ a {
     .contactus-content{
         height: auto;
         padding: 0;
-        margin: 2em 1em;
+        margin: 3em 1em;
         text-align: center;
         
         h1{
@@ -461,6 +487,7 @@ a {
             font-size: 1em;
             margin-bottom: 0;
             text-align: right;
+            color: var(--basetext);
 
             p{
                 margin: 0;
@@ -486,6 +513,7 @@ a {
                 margin-bottom: 1em; /* Bottom margin */
                 resize: none;
                 float: bottom;
+                color: var(--basetext);
                 //border-style:dashed;
             }
             input[type=text]:focus, textarea:focus{
@@ -527,7 +555,7 @@ a {
     fill: var(--orangedark);
     position: relative;
     width: 200%;
-    bottom: -3vw;
+    bottom: -2.5vw;
     transform: translateX(-45%);
 }
 
@@ -545,7 +573,6 @@ footer{
         height: auto;
         background-color: var(--orangedark);
         margin: 0;
-        margin-top: -10px;
         padding: 0;
         overflow: hidden;
         .looping-text{
@@ -578,23 +605,36 @@ footer{
         }
     }
     
-    .botlinks{
-        columns: 2;
-        width: 25ch;
-        justify-content: space-between;
-        margin: 0 auto 2em;
-        text-align: center;
-
-        li{
-            a{
-                font-weight: 600;
-                color: var(--basetext);
-                text-decoration: none;
+    .botlists{
+        .botlinks{
+            display: inline-block;
+            width: 40ch;
+            justify-content: space-between;
+            margin: 0 auto 2em;
+            text-align: left;
+            padding-top: 1em;
+            overflow: visible;
+            font-size: 1.25em;
+    
+            li{
+                margin: 1em;
+                margin-top: 0;
+                overflow: visible;
+                a{
+                    font-weight: 600;
+                    height: 4em;
+                    color: #DDDDDD;
+                    text-decoration: none;
+                    overflow: visible;
+                }
             }
         }
     }
 
     p{
+        u{
+            color: #DDDDDD;
+        }
         margin:0;
         padding: 0 0 4em 0;
         margin: auto;
@@ -672,6 +712,55 @@ footer{
     }
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    svg{
+        margin-top: -1px;
+        margin-left: 14vw;
+        width: 100px;
+        fill: var(--basecolor);
+    }
+}
+
+/* Modal Content */
+.modal-content {
+    color: var(--basetext);
+    display: block;
+    background-color: var(--basecolor);
+    margin: auto;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    height: 10vh;
+    width: 80vw;
+}
+
+/* The Close Button */
+.close {
+    color: var(--basetext);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--orange);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 
 @media only screen and (min-width: 640px) {
@@ -695,7 +784,7 @@ footer{
     .contact-us{
         width: 50%;
         .contactus-content{
-            margin: 2em 2em;
+            margin: 3em 2em;
             h1{
                 text-align: left;
             }
@@ -708,7 +797,7 @@ footer{
     .about-us{
         width: 50%;
         .aboutus-content{
-            margin: 2em 2em;
+            margin: 3em 2em;
             h1{
                 text-align: left;
             }
@@ -754,3 +843,4 @@ footer{
 //        height: 15vw !important;
 //    }
 //}
+
