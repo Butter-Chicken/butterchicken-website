@@ -634,6 +634,68 @@ span.bounce {
   max-width: 50ch;
 }
 
+.about-us .aboutus-content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 15em;
+  margin: 3em 2em;
+}
+
+.about-us .aboutus-content ul li {
+  width: 3em;
+  height: 3em;
+  -webkit-transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms, -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}
+
+.about-us .aboutus-content ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.about-us .aboutus-content ul li a svg {
+  position: relative;
+  top: 23%;
+  fill: #DDDDDD;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: -webkit-transform ease 320ms;
+  transition: -webkit-transform ease 320ms;
+  transition: transform ease 320ms;
+  transition: transform ease 320ms, -webkit-transform ease 320ms;
+}
+
+.about-us .aboutus-content ul .twitter {
+  background-color: #1DA1F2;
+}
+
+.about-us .aboutus-content ul .instagram {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), -webkit-gradient(linear, left top, left bottom, from(#6559ca), color-stop(30%, #bc318f), color-stop(50%, #e33f5f), color-stop(70%, #f77638), to(#fec66d));
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.about-us .aboutus-content ul .youtube {
+  background-color: red;
+}
+
+.about-us .aboutus-content ul li:hover {
+  -webkit-transform: scale(1.25, 1.25);
+          transform: scale(1.25, 1.25);
+}
+
+.about-us .aboutus-content ul li:hover a svg {
+  -webkit-transform: scale(0.75, 0.75);
+          transform: scale(0.75, 0.75);
+}
+
 .about-us .aboutus-content img {
   width: 10em;
   margin: auto;
@@ -689,6 +751,19 @@ span.bounce {
   font-size: 0.9em;
   float: bottom;
   text-align: left;
+}
+
+.contact-us .contactus-content .contact-form p span {
+  font-size: 1em;
+  width: 50vw;
+  float: right;
+  text-align: right;
+  margin-right: 1em;
+  color: #ff1158;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .contact-us .contactus-content .contact-form input[type=text], .contact-us .contactus-content .contact-form select, .contact-us .contactus-content .contact-form textarea {
@@ -1030,6 +1105,9 @@ footer p u {
     text-align: left;
     margin: 1.5em 2em 1em;
   }
+  .contact-us .contactus-content .contact-form p span {
+    width: 25vw;
+  }
   .about-us {
     width: 50%;
   }
@@ -1059,6 +1137,9 @@ footer p u {
     font-size: 1.66vw !important;
     width: 30vw !important;
     height: 20vw !important;
+  }
+  .contact-form p span {
+    margin-right: 1em;
   }
   footer .bottom .looping-text h1 {
     font-size: 7em;
