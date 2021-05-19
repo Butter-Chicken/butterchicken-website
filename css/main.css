@@ -41,18 +41,18 @@
 html {
   overflow-x: hidden;
   max-width: 100%;
+  scroll-behavior: smooth;
   --lightIcon: url("../svg/sun.svg");
   --lightBtn: #FF7F00;
-  --basecolor: #EEEEEE;
-  --basecolorlight: #FFFFFF;
+  --basecolor: #F3EEEE;
+  --basecolorlight: #FFFEFE;
   --basecolordark: #DDDDDD;
-  --basetext: #141133;
+  --basetext: #111133;
   --orange: #FF7F00;
-  --orangedark: #aa4d00;
+  --orangedark: #ab4d00;
 }
 
 html[data-theme='dark'] {
-  background: var(--lightBg);
   --lightIcon: url("../svg/moon.svg");
   --lightBtn: #5f3fb8;
   --basecolor: #353344;
@@ -270,28 +270,83 @@ span.bounce {
   padding: 0;
 }
 
+.nav-container header nav ul {
+  padding: 0 2em 0 0;
+}
+
 .nav-container header nav .normal-nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   display: none;
+  margin: auto 0;
 }
 
 .nav-container header nav .normal-nav a {
+  font-size: 1em;
+  font-weight: 900;
   padding: 0;
+  margin: 0 1em;
 }
 
 .nav-container header nav .social-nav {
-  visibility: visible !important;
   display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
+  margin: 0;
 }
 
-.nav-container header nav .social-nav a {
-  padding: 0;
+.nav-container header nav .social-nav li {
+  margin: auto 1em;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms, -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}
+
+.nav-container header nav .social-nav li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.nav-container header nav .social-nav li a svg {
+  position: relative;
+  top: 20%;
+  fill: #DDDDDD;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: -webkit-transform ease 320ms;
+  transition: -webkit-transform ease 320ms;
+  transition: transform ease 320ms;
+  transition: transform ease 320ms, -webkit-transform ease 320ms;
+}
+
+.nav-container header nav .social-nav .twitter {
+  background-color: #1DA1F2;
+}
+
+.nav-container header nav .social-nav .instagram {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), -webkit-gradient(linear, left top, left bottom, from(#6559ca), color-stop(30%, #bc318f), color-stop(50%, #e33f5f), color-stop(70%, #f77638), to(#fec66d));
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.nav-container header nav .social-nav .youtube {
+  background-color: red;
+}
+
+.nav-container header nav .social-nav li:hover {
+  -webkit-transform: scale(1.25, 1.25);
+          transform: scale(1.25, 1.25);
+}
+
+.nav-container header nav .social-nav li:hover a svg {
+  -webkit-transform: scale(0.75, 0.75);
+          transform: scale(0.75, 0.75);
 }
 
 .nav-container svg {
@@ -354,32 +409,6 @@ span.bounce {
   margin: 0em 1em 4em 0em;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-}
-
-@-webkit-keyframes ripple {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
-}
-
-@keyframes ripple {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
 }
 
 .all-games .container .game .content {
@@ -617,20 +646,20 @@ span.bounce {
 .about-us .aboutus-content {
   height: auto;
   padding: 0;
-  margin: 3em 1em;
+  margin: 3em 3em;
   text-align: center;
 }
 
 .about-us .aboutus-content h1 {
   font-size: 1.5625em;
   padding: 0;
-  margin: 0 2em;
+  margin: 0;
 }
 
 .about-us .aboutus-content p {
   font-size: 1em;
   padding: 0;
-  margin: 1em 2em;
+  margin: 1em 0em;
   max-width: 50ch;
 }
 
@@ -642,7 +671,7 @@ span.bounce {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 15em;
-  margin: 3em 2em;
+  margin: 3em auto;
 }
 
 .about-us .aboutus-content ul li {
@@ -717,14 +746,14 @@ span.bounce {
 .contact-us .contactus-content {
   height: auto;
   padding: 0;
-  margin: 3em 1em;
+  margin: 3em 3em;
   text-align: center;
 }
 
 .contact-us .contactus-content h1 {
   font-size: 1.5625em;
   padding: 0;
-  margin: 0 2em;
+  margin: 0;
 }
 
 .contact-us .contactus-content p {
@@ -734,7 +763,7 @@ span.bounce {
 }
 
 .contact-us .contactus-content .contact-form {
-  margin: 1.6em;
+  margin: 1.6em 0;
   display: block;
   font-weight: 600;
   font-size: 1em;
@@ -904,9 +933,21 @@ footer .bottom .looping-text h1 {
   }
 }
 
-footer .botlists .botlinks {
+footer .botlists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin: auto;
+  width: 18em;
+}
+
+footer .botlists li .botlinks {
   display: inline-block;
-  width: 40ch;
+  width: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -914,21 +955,28 @@ footer .botlists .botlinks {
   text-align: left;
   padding-top: 1em;
   overflow: visible;
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
-footer .botlists .botlinks li {
+footer .botlists li .botlinks li {
   margin: 1em;
   margin-top: 0;
   overflow: visible;
 }
 
-footer .botlists .botlinks li a {
+footer .botlists li .botlinks li a {
   font-weight: 600;
   height: 4em;
   color: #DDDDDD;
   text-decoration: none;
   overflow: visible;
+}
+
+footer .botlists img {
+  display: block;
+  margin: 1.75em 0;
+  width: 5em;
+  height: auto;
 }
 
 footer p {
@@ -1077,9 +1125,27 @@ footer p u {
   cursor: pointer;
 }
 
+@media only screen and (min-width: 425px) {
+  .botlists {
+    width: 25em !important;
+  }
+  .botlists li .botlinks {
+    font-size: 1.25em !important;
+  }
+  .botlists img {
+    margin: 1em 0 0 !important;
+    width: 9em !important;
+  }
+}
+
 @media only screen and (min-width: 640px) {
   .nav-container svg {
     width: 100%;
+  }
+  .normal-nav {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
   .game {
     font-size: 2.5vw !important;
@@ -1096,14 +1162,14 @@ footer p u {
     width: 50%;
   }
   .contact-us .contactus-content {
-    margin: 3em 2em;
+    margin: 3em 4em;
   }
   .contact-us .contactus-content h1 {
     text-align: left;
   }
   .contact-us .contactus-content p {
     text-align: left;
-    margin: 1.5em 2em 1em;
+    margin: 1.5em 0em 1em;
   }
   .contact-us .contactus-content .contact-form p span {
     width: 25vw;
@@ -1112,14 +1178,14 @@ footer p u {
     width: 50%;
   }
   .about-us .aboutus-content {
-    margin: 3em 2em;
+    margin: 3em 4em;
   }
   .about-us .aboutus-content h1 {
     text-align: left;
   }
   .about-us .aboutus-content p {
     text-align: left;
-    margin: 1.5em 2em 1em;
+    margin: 1.5em 0em 1em;
   }
   .about-us .aboutus-content img {
     margin-top: 3em;
@@ -1130,9 +1196,21 @@ footer p u {
             transform: translateX(0%);
     bottom: -3vw;
   }
+  .botlists {
+    width: 29em;
+  }
 }
 
 @media only screen and (min-width: 960px) {
+  .social-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .normal-nav a {
+    font-size: 1.25em !important;
+    margin: 0 2em !important;
+  }
   .game {
     font-size: 1.66vw !important;
     width: 30vw !important;
@@ -1143,6 +1221,14 @@ footer p u {
   }
   footer .bottom .looping-text h1 {
     font-size: 7em;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .game {
+    font-size: 1.25vw !important;
+    width: 22.5vw !important;
+    height: 15vw !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
