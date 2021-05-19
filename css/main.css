@@ -1190,6 +1190,9 @@ footer p u {
   .about-us .aboutus-content img {
     margin-top: 3em;
   }
+  .about-us .aboutus-content ul {
+    margin: 3em 0 !important;
+  }
   .botwaves {
     width: 100%;
     -webkit-transform: translateX(0%);
