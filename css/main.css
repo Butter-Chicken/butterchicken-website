@@ -1206,9 +1206,9 @@ footer p u {
 
 @media only screen and (min-width: 960px) {
   .social-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
   .normal-nav a {
     font-size: 1.25em !important;
