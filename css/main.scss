@@ -7,6 +7,7 @@ $whitetext: #fff;
 //$basetextcolor: #333344;
 //$two: calc(1vw-1600px)
 $marginside: calc(50vw - 700px);
+//$gamewidth4K: calc(700px / 50);
 
 html{
     overflow-x: hidden;
@@ -1047,6 +1048,14 @@ footer{
     }
 }
 
+@media only screen and (min-width: 1450px) {
+    .game{
+        font-size: calc(0.85 * 1.66vw) !important;
+        width: calc(0.85 * 30vw) !important;
+        height: calc(0.85 * 20vw) !important;
+    }
+}
+
 @media only screen and (min-width: 1700px) {
     .nav-container{
         header{
@@ -1060,10 +1069,15 @@ footer{
             padding: 0;
         }
     }
+    //.game{
+    //    font-size: 0.9375vw !important;
+    //    width: 16.875vw !important;
+    //    height: 11.25vw !important;
+    //}
     .game{
-        font-size: 0.9375vw !important;
-        width: 16.875vw !important;
-        height: 11.25vw !important;
+        font-size: calc(14px * 1.66) !important;
+        width: calc(14px * 30) !important;
+        height: calc(14px * 20) !important;
     }
 
     .aboutcontact{
@@ -1083,6 +1097,9 @@ footer{
                 }
             }
         }
+    }
+    .toggle{
+        right: $marginside;
     }
 }
 
