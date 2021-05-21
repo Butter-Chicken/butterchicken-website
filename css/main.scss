@@ -1,14 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
-$orangechicken: #FF7F00;
-$orangechickendark: #BF6000;
-$orangechickentransparent: #FFAA99;
-$basecolor: #EEEEEE;
-$basecolordark: #DDDDDD;
-$basetextcolor: #333344;
+//$orangechicken: #FF7F00;
+//$orangechickendark: #BF6000;
+$lightlightorange: #FFAA99;
+$whitetext: #fff;
+//$basecolordark: #DDDDDD;
+//$basetextcolor: #333344;
+//$two: calc(1vw-1600px)
+$marginside: calc(50vw - 700px);
+
+html{
+    overflow-x: hidden;
+    max-width: 100%;
+    scroll-behavior: smooth;
+
+    --lightIcon: url("../svg/sun.svg");
+    --lightBtn: #FF7F00;
+    --basecolor: #F3EEEE;
+    --basecolorlight: #FFFEFE;
+    --basecolordark: #DDDDDD;
+    --basetext: #111133;
+    --orange: #FF7F00;
+    --orangedark: #ab4d00;
+}
+
+html[data-theme='dark'] {
+    --lightIcon: url("../svg/moon.svg");
+    --lightBtn: #5f3fb8;
+    --basecolor: #291b29;
+    --basecolorlight: #352235;
+    --basecolordark: #201120;
+    --basetext: #fff;
+    --orange: #cf5300;
+    --orangedark: #aa4400;
+}
 
 ::selection{
-    background-color: $orangechickentransparent;
-    color: $basecolor;
+    background-color: $lightlightorange;
+    color: $whitetext;
 }
 
 /* width */
@@ -41,42 +69,17 @@ $basetextcolor: #333344;
 }
 
 
-html{
-    overflow-x: hidden;
-    max-width: 100%;
-    scroll-behavior: smooth;
-
-    --lightIcon: url("../svg/sun.svg");
-    --lightBtn: #FF7F00;
-    --basecolor: #F3EEEE;
-    --basecolorlight: #FFFEFE;
-    --basecolordark: #DDDDDD;
-    --basetext: #111133;
-    --orange: #FF7F00;
-    --orangedark: #ab4d00;
-}
-
-html[data-theme='dark'] {
-    --lightIcon: url("../svg/moon.svg");
-    --lightBtn: #5f3fb8;
-    --basecolor: #353344;
-    --basecolorlight: #444455;
-    --basecolordark: #111122;
-    --basetext: #DDDDDD;
-    --orange: #cf5300;
-    --orangedark: #aa4400;
-}
 
 svg * {
-    transition: color 0.25s ease;
-    transition: background-color 0.25s ease;
-    transition: fill 0.25s ease;
+    //transition: color 0.25s ease;
+    //transition: background-color 0.25s ease;
+    //transition: fill 0.25s ease;
     display: block;
 }
-* {
-    transition: color 0.25s ease;
-    transition: background-color 0.25s ease;
-}
+//* {
+//    transition: color 0.25s ease;
+//    transition: background-color 0.25s ease;
+//}
 
 .hidden-h2{
     visibility: hidden;
@@ -175,13 +178,13 @@ span.bounce{
         justify-content: space-between;
         background-color: var(--orange);
         margin: 0;
-        padding: 0;
+        padding: 0 3em;
 
     
         .logo-container{
             display: flex;
             justify-content: space-between;
-            margin-left: 1.3em;
+            margin-left: 0;
             margin-top: 0.25em;
             user-select: none;
     
@@ -249,10 +252,11 @@ span.bounce{
                         height: 100%;
                         border-radius: 50%;
                         svg{
+                            width: 100%;
                             position: relative;
                             top: 20%;
                             //fill: var(--basetext);
-                            fill: #DDDDDD;
+                            fill: $whitetext;
                             transform-origin: center center;
                             transition: transform ease 320ms;
                         }
@@ -279,8 +283,9 @@ span.bounce{
         }
     }
 
-    svg{
-        width: 200%;
+    .topdrip{
+        transform: translate(-22%);
+        width: 400%;
         padding: 0;
         fill: var(--orange);
     }
@@ -292,10 +297,10 @@ span.bounce{
 .all-games{
     background-color:  var(--basecolor);
     position: relative;
-    color:#333333;
+    //color:#333333;
     overflow: auto;
     margin: 0;
-    padding:  2em 0 2em 0;
+    padding:  2em $marginside;
     overflow-x: hidden;
     overflow-y:visible;
     text-align: center;
@@ -305,7 +310,7 @@ span.bounce{
         margin: auto;
         text-align: center;
         font-size: 16vw;
-        color: #CCCCCC;
+        color: $whitetext;
         display: none;
     }
 
@@ -490,7 +495,7 @@ span.bounce{
                         position: relative;
                         top: 23%;
                         //fill: var(--basetext);
-                        fill: #DDDDDD;
+                        fill: $whitetext;
                         transform-origin: center center;
                         transition: transform ease 320ms;
                     }
@@ -550,6 +555,7 @@ span.bounce{
             font-size: 1em;
             padding: 0;
             margin: 1em 2em 0.5em;
+            max-width: 50ch;
         }
 
         .contact-form{
@@ -575,8 +581,9 @@ span.bounce{
                     float: right;
                     text-align: right;
                     margin-right: 1em;
-                    color: #ff1158;
+                    color: #d5215d;
                     user-select: none;
+                    font-weight: 600;
                 }
             }
 
@@ -605,7 +612,7 @@ span.bounce{
             }
 
             button{
-                border: 1px solid #ccc; /* Gray border */
+                border: 1px solid $whitetext; /* Gray border */
                 border-radius: 2em;
                 width: 6em;
                 height: 3em;
@@ -617,16 +624,16 @@ span.bounce{
 
             button:hover {
                 cursor:pointer;
-                color: #fff;
+                color: $whitetext;
                 background-color: var(--orange);
-                border-color: #EEEEEE;
+                border-color: var(--orange);
             }
 
             button:focus{
-                color: #fff;
+                color: $whitetext;
                 outline: none;
-                box-shadow: 0 0 0 4px $orangechickentransparent;
-                border-color: $orangechickentransparent;
+                box-shadow: 0 0 0 4px $lightlightorange;
+                border-color: $lightlightorange;
             }
         }
     }
@@ -691,7 +698,7 @@ footer{
         justify-content: space-between;
         padding: 0;
         margin: auto;
-        width: 18em;
+        width: 13em;
         li{
             .botlinks{
                 display: inline-block;
@@ -710,7 +717,7 @@ footer{
                     a{
                         font-weight: 600;
                         height: 4em;
-                        color: #DDDDDD;
+                        color: $whitetext;
                         text-decoration: none;
                         overflow: visible;
                     }
@@ -728,12 +735,12 @@ footer{
 
     p{
         u{
-            color: #DDDDDD;
+            color: $whitetext;
         }
         margin:0;
         padding: 0 0 4em 0;
         margin: auto;
-        color: var(--orange);
+        color: $whitetext;
         text-align: center;
         line-height: 80%;
         width: 25ch;
@@ -745,8 +752,8 @@ footer{
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color: rgba($color: #000, $alpha: 0.15);
-    backdrop-filter: blur(3px);
+    //background-color: rgba($color: #000, $alpha: 0.15);
+    //backdrop-filter: blur(3px);
     right: 10px;
     bottom: 10px;
     z-index: 10000;
@@ -771,6 +778,9 @@ footer{
         -moz-border-radius: 100px;
         border-radius: 100px;
         position: relative;
+        border-style: solid;
+        border-width: 7px;
+        border-color:  var(--basecolor);
     }
     label:after {
         content: "";
@@ -809,57 +819,73 @@ footer{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+    display:none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    z-index: 100; /* Sit on top */
+    //padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    overflow: none; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    svg{
-        margin-top: -1px;
-        margin-left: 14vw;
-        width: 100px;
-        fill: var(--basecolor);
+
+    .modal-wrapper{
+        position: absolute;
+        padding:0;
+        margin: 0;
+        width: 20em;
+        max-width: 70%;
+        height: 150;
+        top: 50%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+
+        img{
+            width: 5em;
+        }
+        
+        .modal-content {
+            color: var(--basetext);
+            display: block;
+            background-color: var(--basecolor);
+            padding: 2em;
+            border: none;
+            border-radius: 50px;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+
+            /* The Close Button */
+            .close {
+                color: var(--basetext);
+                float: right;
+                font-size: 2.25em;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: var(--orange);
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        
+        svg{
+            margin-top: -1px;
+            margin-left: 50px;
+            width: 100px;
+            fill: var(--basecolor);
+        }
     }
-}
-
-/* Modal Content */
-.modal-content {
-    color: var(--basetext);
-    display: block;
-    background-color: var(--basecolor);
-    margin: auto;
-    padding: 20px;
-    border: none;
-    border-radius: 50px;
-    height: 10vh;
-    width: 80vw;
-}
-
-/* The Close Button */
-.close {
-    color: var(--basetext);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--orange);
-    text-decoration: none;
-    cursor: pointer;
 }
 
 
 @media only screen and (min-width: 425px) {
     .botlists{
-        width: 25em !important;
+        width: 20em !important;
         li{
             .botlinks{
                 font-size: 1.25em !important;
@@ -874,8 +900,8 @@ footer{
 
 @media only screen and (min-width: 640px) {
     .nav-container{
-        svg{
-            width: 100%;
+        .topdrip{
+            width: 185%;
         }
     }
 
@@ -941,21 +967,31 @@ footer{
         bottom: -3vw;
     }
 
-    .botlists{
-        width: 29em;
-        //li{
-        //    .botlinks{
-        //
-        //        li{
-        //            a{
-        //            }
-        //        }
-        //    }
-        //}
-        //img{
-        //    display: block !important;
-        //}
+    .modal {
+        .modal-wrapper{
+            //width: 20em;
+            //max-width: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
+
+    //.botlists{
+    //    width: 20em !important;
+    //    //li{
+    //    //    .botlinks{
+    //    //
+    //    //        li{
+    //    //            a{
+    //    //            }
+    //    //        }
+    //    //    }
+    //    //}
+    //    //img{
+    //    //    display: block !important;
+    //    //}
+    //}
 
     //footer{
     //    .botlists{
@@ -1011,11 +1047,42 @@ footer{
     }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1700px) {
+    .nav-container{
+        header{
+            padding: 0 $marginside;
+        }
+        .topdrip{
+            transform: translate(0);
+            width: 100%;
+        }
+        .social-nav{
+            padding: 0;
+        }
+    }
     .game{
-        font-size: 1.25vw !important;
-        width: 22.5vw !important;
-        height: 15vw !important;
+        font-size: 0.9375vw !important;
+        width: 16.875vw !important;
+        height: 11.25vw !important;
+    }
+
+    .aboutcontact{
+        .about-us{
+            padding-left: $marginside;
+            .aboutus-content{
+                margin: 3em 0;
+            }
+        }
+        .contact-us{
+            padding-left: 3em;
+            padding-right: $marginside;
+            .contactus-content{
+                margin: 3em 0;
+                button{
+                    margin-bottom: 6em;
+                }
+            }
+        }
     }
 }
 

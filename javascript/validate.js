@@ -4,7 +4,7 @@ var successModal = document.getElementById("successModal");
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    modal.style.display = "none";
+    successModal.style.display = "none";
     resetForm();
 }
 // When the user clicks anywhere outside of the modal, close it
